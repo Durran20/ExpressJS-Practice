@@ -16,10 +16,13 @@ router.get('/', (req, res) => {
 // Here all the blog posts will be displayed
 // Serves all the blog data from blogDaata.js file in data folder
 router.get('/blog', (req, res) => {
-    blogs.forEach(element => {
-        console.log(element.title)
-    });
-    res.sendFile(path.join(__dirname, '../views/blogHome.html'))
+    // blogs.forEach(element => {
+    //     console.log(element.title)
+    // });
+    // res.sendFile(path.join(__dirname, '../views/blogHome.html'))
+    res.render('blogHome', {
+        blogs: blogs
+    })
 })
 
 // To display single blog post
